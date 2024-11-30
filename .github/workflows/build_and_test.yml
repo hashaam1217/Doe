@@ -9,7 +9,6 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-24.04
     steps:
 
       - name: Check out ubc-subbots/triton
