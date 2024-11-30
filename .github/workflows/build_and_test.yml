@@ -46,7 +46,7 @@ jobs:
       - name: test package
         uses: ros-tooling/action-ros-ci@v0.3
         with:
-          package-name: doe_control
           target-ros2-distro: jazzy
+          package-name: doe_control
 
 
