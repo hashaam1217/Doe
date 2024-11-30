@@ -1,4 +1,5 @@
 name: 'Setup OpenCV'
+runs-on: ubuntu-24.04
 description: 'This action downloads, compiles and installs OpenCV using the informed version.'
 branding:
   icon: 'scissors'
