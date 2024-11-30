@@ -10,7 +10,6 @@ jobs:
   build_and_test:
     runs-on: ubuntu-24.04
     steps:
-
       - name: Check out ubc-subbots/triton
         uses: actions/checkout@v2
 
@@ -45,9 +44,9 @@ jobs:
           touch ./opencv-install/COLCON_IGNORE
 
       - name: test package
-      uses: ros-tooling/action-ros-ci@v0.3
-      with:
-        package-name: doe_control
-        target-ros2-distro: jazzy
+        uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: doe_control
+          target-ros2-distro: jazzy
 
 
