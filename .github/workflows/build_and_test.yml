@@ -15,11 +15,6 @@ jobs:
         with:
           required-ros-distributions: jazzy
 
-      - name: Install deps with rosdep
-        run: |
-          rosdep update
-          rosdep install -i --from-path src --rosdistro jazzy -y
-
       - name: Cache OpenCV
         id: opencv-cache
         uses: actions/cache@v4
