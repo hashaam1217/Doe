@@ -1,4 +1,12 @@
 name: 'Setup OpenCV'
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
 runs-on: ubuntu-24.04
 description: 'This action downloads, compiles and installs OpenCV using the informed version.'
 branding:
