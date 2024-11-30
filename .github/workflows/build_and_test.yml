@@ -26,7 +26,7 @@ jobs:
 
       - name: Cache OpenCV
         id: opencv-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./opencv-install
           key: ${{ runner.os }}-opencv-cache
@@ -44,16 +44,10 @@ jobs:
         run: |
           touch ./opencv-install/COLCON_IGNORE
 
-      - name: Source setup and build then test using colcon
-        env:
-          LD_LIBRARY_PATH: /usr/local/lib/
-        run: |
-          source /opt/ros/jazzy/setup.bash
-          source /usr/share/gazebo/setup.sh
-          colcon build --cmake-args -DCMAKE_CXX_STANDARD=14
-          source ./install/setup.bash
-          colcon test
-          colcon test-result --verbose
-
+      - name: test package
+      uses: ros-tooling/action-ros-ci@v0.3
+      with:
+        package-name: doe_control
+        target-ros2-distro: jazzy
 
 
